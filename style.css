@@ -9,14 +9,93 @@
 }
 /*MENU INICIAL*/
 .conteudo-principal{
+    background: #343137;
+    animation: anim 3s linear infinite;
+    color: whitesmoke;
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 90vh;
 }
-
-/*RPDAPÉ*/
+@keyframes anim {
+    0%{
+        filter: hue-rotate(0deg);
+    }
+    50%{
+        transition: 3s;
+        color: rgb(207, 207, 207);
+        background: #2d2635;
+    }
+    100%{
+        background:#343137 ;
+    }
+}
+.menu-inicial{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    margin-top: 50px;
+}
+.titulo-inicial{
+    font-size: 7em;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 8px 6px 10px rgb(70, 0, 128);
+    letter-spacing: 5px;
+}
+.btn-comecar{
+    margin: 20px 0;
+    width: 40%;
+    font-size: 30px;
+    font-weight: bold;
+    border: 2px solid white;
+    border-radius: 10px;
+    background: rgb(70, 0, 128);
+    color: white;
+    text-transform: uppercase;
+    transition: 0.4s;
+}
+.btn-comecar:hover{
+    transition: 0.5s;
+    transform: scale(1.1);
+    font-size: 38px;
+    cursor: pointer;
+}
+.pontuacao{
+    font-size: 28px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    margin: 20px 0;
+    color: white;
+}
+/*TABELA*/
+.conteudo-tabela-recorde{
+    width: 300px;
+}
+.tabela-recorde{
+    width: 100%;
+    border: 2px solid white;
+}
+.tabela-descricao{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 1px;
+}
+.conteudo-tabela-descricao{
+    border: 2px solid white;
+    width: 50%;
+    padding: 5px;
+}
+/*ROPDAPÉ*/
 .rodape{
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    background: #0f001d;
+    color: whitesmoke;
     display: flex;
     justify-content: center;
 }
