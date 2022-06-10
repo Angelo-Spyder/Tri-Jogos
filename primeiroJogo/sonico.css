@@ -1,0 +1,83 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+.cabecalho{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-transform: uppercase;
+    color: white;
+    background: #343137;
+}
+.titulo{
+    margin: 20px 0;
+    animation: anima 3s linear infinite;
+}
+@keyframes anima{
+    0%{
+        color: rgb(255, 255, 255);
+    }
+    50%{
+        color: rgb(0, 174, 255);
+    }
+    100%{
+        color: rgb(116, 116, 255);
+    }
+}
+.subtitulo{
+    margin: 20px 0;
+    animation: animated 3s linear infinite;
+}
+@keyframes animated{
+    50%{
+        color: gold;
+        transition: 0.5s;
+    }
+    100%{
+        transition: 0.5s;
+        color: yellow;
+    }
+}
+
+/* TELA DE JOGO */
+.game{
+    background: rgb(0, 174, 255);
+    width: 600px;
+    height: 300px;
+    margin: 20px auto;
+    border: 1px solid black;
+}
+.sonico{
+    position: relative;
+    top: 240px;
+    background-image: url("../img/sonic-esperando.png");
+    background-size: cover;
+    width: 60px;
+    height: 60px;
+}
+
+.pulo{
+    animation: pular 0.4s linear;
+}
+@keyframes pular{
+    0%{
+        top: 240px;
+    }
+    30%{
+        top: 210px;
+    }
+    50%{
+        top: 180px;
+    }
+    80%{
+        top: 210px;
+    }
+    100%{
+        top: 240px;
+    }
+}
