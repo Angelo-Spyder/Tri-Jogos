@@ -81,3 +81,25 @@
         top: 240px;
     }
 }
+
+/*OBSTÁCULO*/
+.espinhos{
+    position: relative;
+    top: 210px;
+    background-image: url("../img/espinhos.png");
+    background-size: cover;
+    left: 570px;
+    width: 30px;
+    height: 30px;
+    animation: movimento 1.5s linear infinite;
+}
+
+@keyframes movimento {
+    0%{
+        left: 570px;
+    }
+    100%{
+        left: 0px;
+    }
+}
+
