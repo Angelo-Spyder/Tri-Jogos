@@ -3,8 +3,11 @@ const sonico = document.querySelector(".sonico");
 const espinho = document.querySelector(".espinhos")
 const game = document.querySelector(".game");
 
+let pontos = 0
+
 game.addEventListener("click", function(){
     pular()
+    espinho.classList.add("iniciar");
 })
 
 function pular(){
@@ -26,11 +29,13 @@ let estaVivo = setInterval(() =>{
 
     if(espinhoLeft < 60 && espinhoLeft > 0 && sonicoTop >= 240){
         alert("Tente novamente")
+        vivo = false
         resetar()
     }
 },10)
 
 function resetar(){
     espinhoLeft = 570
+    espinho.classList.remove("iniciar")
     sonico.style.backgroundImage = `url("../img/sonic-esperando.png")`
 }

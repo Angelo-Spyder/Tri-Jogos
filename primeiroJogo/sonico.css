@@ -56,7 +56,7 @@
     position: relative;
     top: 240px;
     background-image: url("../img/sonic-esperando.png");
-    background-size: cover;
+    background-size: 60px 60px;
     width: 60px;
     height: 60px;
 }
@@ -91,6 +91,10 @@
     left: 570px;
     width: 30px;
     height: 30px;
+
+}
+
+.iniciar{
     animation: movimento 1.5s linear infinite;
 }
 
