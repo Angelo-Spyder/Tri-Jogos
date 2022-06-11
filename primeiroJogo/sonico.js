@@ -2,6 +2,10 @@
 const sonico = document.querySelector(".sonico");
 const espinho = document.querySelector(".espinhos")
 const game = document.querySelector(".game");
+const btnAvancar = document.querySelector(".btn-avancar")
+let pontosTelaSonic = document.querySelector(".pontos");
+
+btnAvancar.classList.add("sumir")
 
 let pontos = 0
 let validaPontos = "Pausado"
@@ -19,8 +23,10 @@ game.addEventListener("click", function(){
 function PontuacaoTotal(){
     if(validaPontos == "EmJogo"){
         pontos = pontos + 10
-        console.log("yo")
-        console.log(pontos)
+        pontosTelaSonic.textContent = pontos
+    }
+    if(pontos >= 300){
+        btnAvancar.classList.remove("sumir")
     }
 }
 
@@ -53,6 +59,7 @@ let estaVivo = setInterval(() =>{
 
 function resetar(){
     pontos = 0
+    pontosTelaSonic.textContent = pontos
     espinhoLeft = 570
     espinho.classList.remove("iniciar")
     espinho.classList.remove("velocidade-aumentada")

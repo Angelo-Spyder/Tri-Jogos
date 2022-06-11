@@ -43,7 +43,12 @@
         color: yellow;
     }
 }
-
+/*TELA DE PONTOS*/
+.conteudo-pontos{
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+}
 /* TELA DE JOGO */
 .game{
     background: rgb(9, 0, 54);
@@ -131,4 +136,31 @@
     100%{
         left: 0px;
     }
+}
+
+/*BOTAO*/
+.conteudo-botao{
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+.btn-avancar{
+    width: 40%;
+    font-size: 30px;
+    font-weight: bold;
+    border: 2px solid white;
+    border-radius: 10px;
+    background: rgb(70, 0, 128);
+    color: white;
+    text-transform: uppercase;
+    transition: 0.4s;
+}
+.sumir{
+    display: none;
+}
+.btn-avancar:hover{
+    transition: 0.5s;
+    transform: scale(1.1);
+    font-size: 38px;
+    cursor: pointer;
 }
