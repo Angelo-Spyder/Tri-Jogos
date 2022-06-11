@@ -25,6 +25,7 @@
     margin: 10px 0;
 }
 .conteudo-fantasma{
+    margin: 40px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -39,4 +40,70 @@
     width: 40px;
     height: 40px;
     background: red;
+}
+
+/*ANIMACÇÕES*/
+.desaparecer{
+    transition: 0.2s;
+    opacity: 0;
+}
+
+/*MOVIMENTOS*/
+
+.fantasma-movimento-1{
+    animation: movimento1 5s linear infinite;
+}
+
+@keyframes movimento1{
+    0%{
+        left: 0px;
+        top: 0px;
+    }
+    20%{
+        left: 300px;
+    }
+    40%{
+        top: 200px;
+        left: 700px;
+    }
+    60%{
+        left: 100px;
+    }
+    80%{
+        top: 100px;
+        left: 400px;
+    }
+    100%{
+        left: 50px;
+        top: 250px;
+    }
+}
+
+.fantasma-movimento-2{
+    animation: movimento2 5s linear infinite;
+}
+
+@keyframes movimento2{
+    0%{
+        left: 700px;
+        top: 280px;
+    }
+    20%{
+        left: 100px;
+    }
+    40%{
+        top: 50px;
+        left: 0px;
+    }
+    60%{
+        left: 400px;
+    }
+    80%{
+        top: 0px;
+        left: 200px;
+    }
+    100%{
+        left: 500px;
+        top: 210px;
+    }
 }
