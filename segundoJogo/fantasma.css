@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #343137;
+}
+.cabecalho{
+    text-shadow: 2px 2px 4px rgb(139, 139, 139);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: whitesmoke;
+}
+.titulo-principal{
+    margin: 20px 0;
+    font-size: 35px;
+}
+.subtitulo{
+    font-size: 30px;
+    margin: 10px 0;
+}
