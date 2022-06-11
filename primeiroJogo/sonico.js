@@ -4,11 +4,29 @@ const espinho = document.querySelector(".espinhos")
 const game = document.querySelector(".game");
 
 let pontos = 0
+let validaPontos = "Pausado"
 
 game.addEventListener("click", function(){
     pular()
     espinho.classList.add("iniciar");
+    if(pontos >= 300){
+        espinho.classList.remove("iniciar");
+        espinho.classList.add("velocidade-aumentada")
+    }
+    validaPontos = "EmJogo"
 })
+
+function PontuacaoTotal(){
+    if(validaPontos == "EmJogo"){
+        pontos = pontos + 10
+        console.log("yo")
+        console.log(pontos)
+    }
+}
+
+setInterval(()=>{
+    PontuacaoTotal()
+},500)
 
 function pular(){
     if(sonico.classList != "pulo"){
@@ -21,7 +39,6 @@ function pular(){
 }
 
 let estaVivo = setInterval(() =>{
-
     //EIXO Y
     let sonicoTop = parseInt(window.getComputedStyle(sonico).getPropertyValue("top"));
     //EIXO X
@@ -29,13 +46,15 @@ let estaVivo = setInterval(() =>{
 
     if(espinhoLeft < 60 && espinhoLeft > 0 && sonicoTop >= 240){
         alert("Tente novamente")
-        vivo = false
+        validaPontos = false
         resetar()
     }
 },10)
 
 function resetar(){
+    pontos = 0
     espinhoLeft = 570
     espinho.classList.remove("iniciar")
+    espinho.classList.remove("velocidade-aumentada")
     sonico.style.backgroundImage = `url("../img/sonic-esperando.png")`
 }

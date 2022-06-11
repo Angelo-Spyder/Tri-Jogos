@@ -46,12 +46,25 @@
 
 /* TELA DE JOGO */
 .game{
-    background: rgb(0, 174, 255);
+    background: rgb(9, 0, 54);
     width: 600px;
     height: 300px;
     margin: 20px auto;
     border: 1px solid black;
 }
+.game::after{
+    content: "";
+    display: inline-block;
+    left: 480px;
+    top: -90px;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    box-shadow: 4px 4px 8px rgb(255, 255, 255);
+    background: rgb(180, 180, 180);
+}
+
 .sonico{
     position: relative;
     top: 240px;
@@ -69,13 +82,13 @@
         top: 240px;
     }
     30%{
-        top: 210px;
+        top: 200px;
     }
     50%{
-        top: 180px;
+        top: 170px;
     }
     80%{
-        top: 210px;
+        top: 200px;
     }
     100%{
         top: 240px;
@@ -85,17 +98,17 @@
 /*OBSTÁCULO*/
 .espinhos{
     position: relative;
-    top: 210px;
+    top: 200px;
     background-image: url("../img/espinhos.png");
     background-size: cover;
-    left: 570px;
-    width: 30px;
-    height: 30px;
+    left: 560px;
+    width: 40px;
+    height: 40px;
 
 }
 
 .iniciar{
-    animation: movimento 1.5s linear infinite;
+    animation: movimento 1.8s linear infinite;
 }
 
 @keyframes movimento {
@@ -107,3 +120,15 @@
     }
 }
 
+.velocidade-aumentada{
+    animation: movimentoRapido 1s linear infinite;
+}
+
+@keyframes movimentoRapido {
+    0%{
+        left: 570px;
+    }
+    100%{
+        left: 0px;
+    }
+}
