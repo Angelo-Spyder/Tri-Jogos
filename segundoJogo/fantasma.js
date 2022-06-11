@@ -1,8 +1,12 @@
 
 const game = document.querySelector(".game");
 const fantasma = document.querySelector(".fantasma");
+let tempo = document.querySelector(".tempo");
+
+let comecou = false
 
 game.addEventListener("click", () =>{
+    comecou = true
     if(fantasma.classList != "fantasma-movimento-1"){
         fantasma.classList.add("fantasma-movimento-1")
     }
@@ -12,7 +16,16 @@ game.addEventListener("click", () =>{
     
 })
 
+//Tempo
+setInterval(()=>{
+    calcularTempo()
+},1000)
 
+function calcularTempo(){
+    if(comecou){
+        tempo.textContent = Number(tempo.textContent) - 1
+    }
+}
 
 //Aplicando desaparecimento
 setInterval(()=>{
