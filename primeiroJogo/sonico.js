@@ -25,7 +25,7 @@ function PontuacaoTotal(){
         pontos = pontos + 10
         pontosTelaSonic.textContent = pontos
     }
-    if(pontos >= 300){
+    if(pontos >= 600){
         btnAvancar.classList.remove("sumir")
     }
 }
