@@ -65,3 +65,8 @@ function resetar(){
     espinho.classList.remove("velocidade-aumentada")
     sonico.style.backgroundImage = `url("../img/sonic-esperando.png")`
 }
+
+//Próximo jogo
+btnAvancar.addEventListener("click", function(){
+    location.href = "../segundoJogo/fantasma.html"
+})
