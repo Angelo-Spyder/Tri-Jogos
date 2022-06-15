@@ -1,45 +1,53 @@
 
 const game = document.querySelector(".game");
-const fantasma = document.querySelector(".fantasma");
+const fantasma = document.querySelector("#fantasma");
 let tempo = document.querySelector(".tempo");
 
-let comecou = false
+var jogoComecou
+let fantasmaComecou
 
-game.addEventListener("click", () =>{
-    comecou = true
-    if(fantasma.classList != "fantasma-movimento-1"){
-        fantasma.classList.add("fantasma-movimento-1")
-    }
-    if(fantasma.classList != "fantasma-movimento-2"){
-        fantasma.classList.add("fantasma-movimento-2")
-    }
-    
+game.addEventListener("click",function(){
+    jogoComecou = true
 })
 
-//Tempo
-setInterval(()=>{
-    calcularTempo()
+fantasma.addEventListener("click",function(){
+    if(fantasmaComecou){
+        jogoComecou = false
+        console.log("Fim")
+        console.log(Number(tempo.textContent) * 20)
+    }
+
+})
+
+setInterval(() =>{
+    temporizador()
 },1000)
 
-function calcularTempo(){
-    if(comecou){
-        tempo.textContent = Number(tempo.textContent) - 1
+setInterval(() =>{
+    movimento()
+},700)
+
+function movimento(){
+    if(jogoComecou){
+        setTimeout(()=>{
+            fantasma.classList.add("desaparecer")
+
+        },200)
+        
+        setTimeout(()=>{
+            fantasmaComecou = true
+            fantasma.classList.remove("desaparecer")
+            let randomLeft = parseInt(Math.random() * 700)
+            let randomTop = parseInt(Math.random() * 300)
+        
+            fantasma.style.left = `${randomLeft}px`
+            fantasma.style.top = `${randomTop}px`
+        },500)
     }
 }
 
-//Aplicando desaparecimento
-setInterval(()=>{
-    fantasma.classList.add("desaparecer")
-},500)
-
-setInterval(()=>{
-    fantasma.classList.remove("desaparecer")
-},1000)
-
-//Troca de classes
-setInterval(()=>{
-    fantasma.classList.add("fantasma-movimento-2")
-},5000)
-setInterval(()=>{
-    fantasma.classList.remove("fantasma-movimento-2")
-},10000)
+function temporizador(){
+    if(jogoComecou){
+        tempo.textContent = Number(tempo.textContent) - 1
+    }
+}
