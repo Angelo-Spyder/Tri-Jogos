@@ -11,9 +11,12 @@ game.addEventListener("click",function(){
 })
 
 fantasma.addEventListener("click",function(){
+
     if(fantasmaComecou){
-        jogoComecou = false
-        console.log("Fim")
+        alert("BOO ME ACERTOU")
+
+        location.href = "../terceiroJogo/cobrinha.html"
+
         console.log(Number(tempo.textContent) * 20)
     }
 
