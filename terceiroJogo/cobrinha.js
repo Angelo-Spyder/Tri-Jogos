@@ -1,9 +1,11 @@
 
 window.onload = function(){
+    var pontos = document.querySelector("#pontos");
     var stage = document.querySelector("#stage");
     var context = stage.getContext("2d");
 
     document.addEventListener("keydown", movimento);
+    var pontoAtual = 0
 
     setInterval(game, 65);
 
@@ -49,8 +51,14 @@ window.onload = function(){
         context.fillStyle = "gray"
         for(var i = 0; i < rastro.length; i++){
             context.fillRect(rastro[i].x*tamanho,rastro[i].y*tamanho,tamanho,tamanho);
-
+            //GameOver
             if(rastro[i].x == px && rastro[i].y == py){
+                if(pontos.textContent < 400){
+                    pontos.textContent = 0
+                }else{
+                    pontoAtual = pontos.textContent
+                }
+                cauda = 5
                 vx = vy = 0;
             }
         };
@@ -64,15 +72,26 @@ window.onload = function(){
             rastro.shift();
         };
 
+        //Pegando a fruta
         if(frutaX == px && frutaY == py){
             cauda++
 
             frutaX = Math.floor(Math.random() * quantidade);
             frutaY = Math.floor(Math.random() * quantidade);
+
+            pontos.textContent = Number(pontos.textContent)  + 20
         }
 
-    };
+        if(pontos.textContent >= 400){
+            var btnAvancar = document.querySelector(".btn-final");
+            btnAvancar.textContent = "Prosseguir";
 
+            btnAvancar.addEventListener("click", ()=>{
+               location.href = "../index.html"
+            })
+        }
+    };
+    
     function movimento(event){
         switch(event.keyCode){
             case 37: //esquerda
