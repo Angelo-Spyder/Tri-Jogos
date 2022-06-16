@@ -5,10 +5,21 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Jogo da cobrinha</title>
+
+        <link rel="stylesheet" href="cobrinha.css">
     </head>
     <body>
+        <header class="cabecalho">
+            <h1 class="titulo-principal">Jogo da cobrinha</h1>
+            <h2 class="subtitulo">consiga 400 pontos</h2>
+            <h2 class="subtitulo">use as setas ou o controle</h2>
+        </header>
+        <main class="pontuacao">
+            <h2 class="subtitulo">seus pontos: <span id="pontos">0</span></h2>
+        </main>
         <canvas id="stage" width="400" height="400"></canvas> 
 
+        <button class="btn-final">Prosseguir</button>
         <script src="cobrinha.js"></script>
     </body>
 </html>
