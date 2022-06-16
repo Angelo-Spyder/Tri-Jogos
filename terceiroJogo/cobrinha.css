@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #343137;
+}
+
+.cabecalho{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgb(245, 244, 202);
+    padding: 10px;
+}
+.titulo-principal{
+    font-size: 38px;
+    margin: 4px 0;
+}
+.subtitulo{
+    font-size: 30px;
+}
+
+.pontuacao{
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+.game{
+    display: flex;
+    justify-content: center;
+}
+
+.conteudo-botao{
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+.btn-final{
+    width: 40%;
+    font-size: 30px;
+    font-weight: bold;
+    border: 2px solid white;
+    border-radius: 10px;
+    background: rgb(70, 0, 128);
+    color: white;
+    text-transform: uppercase;
+    transition: 0.4s;
+}
+.btn-final:hover{
+    transition: 0.5s;
+    transform: scale(1.1);
+    font-size: 38px;
+    cursor: pointer;
+}
