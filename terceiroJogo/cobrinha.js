@@ -6,6 +6,7 @@ window.onload = function(){
 
     document.addEventListener("keydown", movimento);
     var pontoAtual = 0
+    var morto = false
 
     setInterval(game, 65);
 
@@ -53,9 +54,11 @@ window.onload = function(){
             context.fillRect(rastro[i].x*tamanho,rastro[i].y*tamanho,tamanho,tamanho);
             //GameOver
             if(rastro[i].x == px && rastro[i].y == py){
+                
                 if(pontos.textContent < 400){
                     pontos.textContent = 0
                 }else{
+                    morto = true
                     pontoAtual = pontos.textContent
                 }
                 cauda = 5
@@ -93,6 +96,10 @@ window.onload = function(){
     };
     
     function movimento(event){
+        if(morto){
+            pontos.textContent = 0
+            morto = false
+        }
         switch(event.keyCode){
             case 37: //esquerda
                 vx = -velocidade
