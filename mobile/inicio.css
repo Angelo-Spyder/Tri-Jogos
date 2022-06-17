@@ -1,0 +1,12 @@
+/*INICIO*/
+@media screen and (max-width: 768px){
+    .conteudo-principal{
+        height: 100vh;
+    }
+    .menu-inicial{
+        margin-top: 10px;
+    }
+    .titulo-inicial{
+        font-size: 4em;
+    }
+}

@@ -1,0 +1,22 @@
+
+@media screen and (max-width: 768px){
+    .game{
+        align-items: center;
+        flex-direction: column;
+        gap: 5px;
+    }
+    .lados{
+        display: flex;
+        width: 180px;
+        justify-content: space-between;
+    }
+    .botao-jogo{
+        border: none;
+        background: #252525;
+        color: white;
+        width: 60px;
+        height: 60px;
+        font-size: 28px;
+        align-items: center;
+    }
+}
