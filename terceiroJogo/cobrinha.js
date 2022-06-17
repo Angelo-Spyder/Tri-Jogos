@@ -1,4 +1,10 @@
 
+console.log(window.screen.width);
+
+var gameTela = document.querySelector(".game");
+
+
+
 window.onload = function(){
     var pontos = document.querySelector("#pontos");
     var stage = document.querySelector("#stage");
@@ -119,4 +125,67 @@ window.onload = function(){
             break;
         }
     }
+
+    //Versão mobile do jogo
+
+    if(window.screen.width < 768){
+
+        //divisoes
+        var divisaoCima = document.createElement("div");
+        divisaoCima.classList.add("cima");
+
+        var divisaoLateral = document.createElement("div");
+        divisaoLateral.classList.add("lados");
+
+        var divisaoBaixo = document.createElement("div");
+        divisaoBaixo.classList.add("baixo");
+
+        //criando botao
+        var botaoDireita = document.createElement("button");
+        botaoDireita.innerHTML = "&#8594;";
+
+        var botaoEsquerda = document.createElement("button");
+        botaoEsquerda.innerHTML = "&#8592;";
+
+        var botaoCima = document.createElement("button");
+        botaoCima.innerHTML = "&#8593;";
+
+        var botaoBaixo = document.createElement("button");
+        botaoBaixo.innerHTML = "&#8595;";
+    
+        //Evento dos botoes
+        botaoDireita.addEventListener("click", ()=>{
+            vx = velocidade
+            vy = 0
+        })
+        botaoEsquerda.addEventListener("click", ()=>{
+            vx = -velocidade
+            vy = 0
+        })
+        botaoCima.addEventListener("click", ()=>{
+            vx = 0
+            vy = -velocidade
+        })
+        botaoBaixo.addEventListener("click", ()=>{
+            vx = 0
+            vy = velocidade
+        })
+
+        //Adicionando classes
+        botaoDireita.classList.add("botao-jogo");
+        botaoEsquerda.classList.add("botao-jogo");
+        botaoCima.classList.add("botao-jogo");
+        botaoBaixo.classList.add("botao-jogo");
+        //Adicionando botoes na tela
+        divisaoCima.appendChild(botaoCima);
+        divisaoLateral.appendChild(botaoEsquerda);
+        divisaoLateral.appendChild(botaoDireita);
+        divisaoBaixo.appendChild(botaoBaixo);
+
+        gameTela.appendChild(divisaoCima);
+        gameTela.appendChild(divisaoLateral);
+        gameTela.appendChild(divisaoBaixo);
+
+    }
+
 }
